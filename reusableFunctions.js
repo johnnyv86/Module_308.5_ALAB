@@ -125,3 +125,61 @@ const totalAge = mappedPeople.reduce((sum, person) => {
 const averageAgeMapped = mappedPeople.length > 0 // Avoid divide-by-zero if array is empty
 ? totalAge / mappedPeople.length
 : 0; 
+
+/* ===============================================
+    PART 3: THINKING CRITICALLY 
+================================================*/
+
+// Take an object and increment its age field.
+function incrementAgeField(obj) {
+    if (typeof obj.age === "undefined") { // Checks if (obj.age) exist
+        obj.age = 0; // Sets it to 0 if no existance
+    } else {
+        obj.age = Number(obj.age); // If existance will ensure it is a number 
+    }
+    obj.age += 1; // Increments age by 1
+}
+
+// Take an object, make a copy, and increment the age field of the copy. 
+function incrementAgeInplace(person) {
+    incrementAgeField(person); // Calls the ORIGINAL object directly
+    person.updated_at = new Date(); // Sets (update_at) to a NEW Date instance (current time)
+    return person; // (person) is an object: changes inside function persist outside
+}
+
+// Return the MODIFIED copy.
+function incrementAgeCopy(person) {
+    const copy = { ...person};
+
+    incrementAgeField(copy);
+    copy.updated_at = new Date();
+
+    return copy;
+}
+/* [Spread Operator {...person}] ======================
+    Makes a Shallow Copy
+        Modifies copy, Not original
+        Returns copy Leaves Original as is
+    New Object:
+        Same Prperties
+        Same Values
+        Differnt Object
+======================================================*/
+
+// THOUGHT EXPERIMENT //
+console.log("- If we reused the same Date instance for updated_at, and then changed it");
+console.log(" using setTime() in one object, all objects sharing that Date would change.");
+console.log("- To avoid this, we create a NEW Date() each time, as done above.\n");
+/* [THOUGHT EXPERIMENT EXPLANATION] ======================
+    (Date): is an object
+    If multiple objects shares the same (Date) instance as (updated_at), 
+        changing it with (setTime()) in ONE place affects ALL
+
+    Calling (new Date()) SEPARATELY in EACH function cells results:
+        Each object getting its own (Date) instance
+        NO unintended shared mutations
+======================================================*/
+
+/* ===============================================
+    PART 3: THINKING PRACTICALLY 
+================================================*/
