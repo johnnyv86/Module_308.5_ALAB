@@ -179,7 +179,3 @@ console.log("- To avoid this, we create a NEW Date() each time, as done above.\n
         Each object getting its own (Date) instance
         NO unintended shared mutations
 ======================================================*/
-
-/* ===============================================
-    PART 3: THINKING PRACTICALLY 
-================================================*/
