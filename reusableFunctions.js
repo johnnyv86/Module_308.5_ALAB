@@ -107,3 +107,14 @@ const mappedPeople = age50OrLess.map((person) => {
 ---------------------------------------------------------------------------------------- */
 
 
+// 4. Use the reduce method to calculate the sum of the ages.
+const totalAge = mappedPeople.reduce((sum, person) => {
+    return sum + Number(person.age);
+}, 0);
+/* EXPLANATION ----
+    [reduce(callback, initialValue)]
+        for each (person), add Number(person.age) to (sum)
+        final (totalAge) is the sum of ages
+---------------------------------------------------------------------------------------- */
+
+
