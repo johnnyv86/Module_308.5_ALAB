@@ -2,7 +2,7 @@
     THINKING FUNCTIONALLY
 ---------------------------- */
 // 1. Take an array of numbers and return the sum.
-function sumArray(numbers) {        // (number is an array [1, 2, 3, 4, 5])
+function sumArray(numbers) {        // (numbers is an array [1, 2, 3, 4, 5])
     let sum = 0                     // starts sum at 0
     for (const n of numbers) {      // (for . . . of) iterate through each number
         sum += n;                   // Add each number to sum
@@ -12,7 +12,10 @@ function sumArray(numbers) {        // (number is an array [1, 2, 3, 4, 5])
 
 
 // 2. Take an array of numbers and return the average.
-
+function averageArray(numbers) {
+    if (numbers.length === 0) return 0;         // Checks if array is empty (avoids division by zero)
+    return sumArray(numbers) / numbers.length;  // sum of all numbers / Divides by `number.length` = returns mean
+}
 
 // 3. Take an array of strings and return the longest string.
 
