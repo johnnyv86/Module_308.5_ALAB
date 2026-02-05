@@ -137,6 +137,18 @@ function incrementAgeField(obj) {
 }
 
 // 2. Take an object, make a copy, and increment the age field of the copy. 
-function incrementAge
+function incrementAgeInplace(person) {
+    incrementAgeField(person);              // calls the ORIGINAL object directly
+    person.update_at = new Date();          // sets (update_at) to a NEW Date instance (current time)
+    return person;                          // (person): is an object: changes inside function persist outside
+}
 
 // 3. Return the copy
+function incrementAgeCopy(person) {
+    const copy = {...person};               // Makes a shallow copy
+                                            // modifies & returns copy leaving original as is
+    incrementAgeField(copy);                // New Object:
+    copy.updated_at = new Date();                   // Same Properties
+                                                    // Same Values
+    return copy;                                    // Different Object
+}
