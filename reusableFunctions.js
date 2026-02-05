@@ -31,7 +31,15 @@ function longestString(strings) {
 }
 
 // 4. Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
-
+function stringsLongerThan(strings, miniLength) { // (srigns): array of strings | (miniLength): number
+    const result = [];                            // will loop through each string
+    for (const str of strings) {                  // (for . . . of) iterate through each string
+        if (str.length > miniLength) {            // If its `.length` is greater than `miniLength`
+            result.push(str);                     // push str into `result` to be returned 
+        }
+    }
+    return result;
+}
 
 // For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
 
