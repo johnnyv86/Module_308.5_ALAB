@@ -1,6 +1,6 @@
-/* ---------------------------
-    THINKING FUNCTIONALLY
----------------------------- */
+/* ------------------------------------------------------------------------------------------------------------
+    1 - THINKING FUNCTIONALLY
+------------------------------------------------------------------------------------------------------------- */
 // 1. Take an array of numbers and return the sum.
 function sumArray(numbers) {                    // (numbers is an array [1, 2, 3, 4, 5])
     let sum = 0                                 // starts sum at 0
@@ -52,4 +52,43 @@ function printNumberRecursively(n, current = 1) {   // (n): the max number to pr
     }
     console.log(current);                           // (current) number being printed
     printNumberRecursively(n, current + 1);         // (current + 1) calls the same function
-}                                                   // for (let i=1; i<=n; i++) loop type replaced by Recursion
+}                                                   // for (let i=1; i<=n; i++) loop type replaced by 
+
+
+
+/* ------------------------------------------------------------------------------------------------------------
+    2 - THINKING METHODICALLY (Array Methods)
+------------------------------------------------------------------------------------------------------------- */
+// CONSTANT
+const peopleData = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+]
+
+// 1. Sort the array by age.
+const sortedByAge = [...peopleData].sort((a, b) => {
+    return Number(a.age) - Number(b.age);
+});
+/* EXPLANATION ----
+    [...peopleData]: makes a shallow copy (prevents mutation of original array)
+    (sort): expects a comparator: 
+        if results < 0 -> a before b
+        if results > 0 -> b before a 
+
+    Number(a.age) - Number(b.age)
+        sorts ascending by numeric age
+---------------------------------------------------------------------------------------- */
+
+// 2. Filter the array to remove entries with an age greater than 50.
+
+
+// 3. Map the array to change the “occupation” key to “job” and increment every age by 1.
+
+
+// 4. Use the reduce method to calculate the sum of the ages.
+
+
+\// 5. Then use the result to calculate the average age
