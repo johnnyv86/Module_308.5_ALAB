@@ -91,9 +91,19 @@ const age50OrLess = sortedByAge.filter((person) => Number(person.age) <= 50);
 
 
 // 3. Map the array to change the “occupation” key to “job” and increment every age by 1.
+const mappedPeople = age50OrLess.map((person) => {
+    return {
+        id: person.id,
+        name: person.name,
+        job: person.occupation,
+        age: String(Number(person.age) + 1)
+    };
+});
+/* EXPLANATION ----
+    (job: person.occupation)
+        `occupation` key changed to `job`
+    (age: String(Number(person.age) + 1))
+        increment every age by 1
+---------------------------------------------------------------------------------------- */
 
 
-// 4. Use the reduce method to calculate the sum of the ages.
-
-
-// 5. Then use the result to calculate the average age
