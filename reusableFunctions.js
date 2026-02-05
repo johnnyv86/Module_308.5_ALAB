@@ -1,6 +1,6 @@
-/* ------------------------------------------------------------------------------------------------------------
+/* =============================================================================================================================================
     1 - THINKING FUNCTIONALLY
-------------------------------------------------------------------------------------------------------------- */
+============================================================================================================================================= */
 // 1. Take an array of numbers and return the sum.
 function sumArray(numbers) {                    // (numbers is an array [1, 2, 3, 4, 5])
     let sum = 0                                 // starts sum at 0
@@ -56,9 +56,9 @@ function printNumberRecursively(n, current = 1) {   // (n): the max number to pr
 
 
 
-/* ------------------------------------------------------------------------------------------------------------
+/* =============================================================================================================================================
     2 - THINKING METHODICALLY (Array Methods)
-------------------------------------------------------------------------------------------------------------- */
+============================================================================================================================================= */
 // CONSTANT
 const peopleData = [
     { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
@@ -152,3 +152,21 @@ function incrementAgeCopy(person) {
                                                     // Same Values
     return copy;                                    // Different Object
 }
+
+
+/* =============================================================================================================================================
+     THOUGHT EXPERIMENT
+============================================================================================================================================= */
+console.log("- If we reused the same Date instance for updated_at, and then changed it");
+console.log(" using setTime() in one object, all objects sharing that Date would change.");
+console.log("- To avoid this, we create a NEW Date() each time, as done above.\n");
+
+/* EXPLANATION ----
+    (Date): is an object
+    If multiple objects shares the same (Date) instance as (updated_at), 
+        changing it with (setTime()) in ONE place affects ALL
+
+    Calling (new Date()) SEPARATELY in EACH function cells results:
+        Each object getting its own (Date) instance
+        NO unintended shared mutations
+---------------------------------------------------------------------------------------- */
