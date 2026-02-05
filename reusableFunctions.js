@@ -31,6 +31,7 @@ function longestString(strings) {
 }
 
 // 4. Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
+// For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
 function stringsLongerThan(strings, miniLength) { // (srigns): array of strings | (miniLength): number
     const result = [];                            // will loop through each string
     for (const str of strings) {                  // (for . . . of) iterate through each string
@@ -41,7 +42,14 @@ function stringsLongerThan(strings, miniLength) { // (srigns): array of strings 
     return result;
 }
 
-// For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
-
 
 // 5. Take a number, n, and print every number between 1 and n without using loops. Use recursion
+                                                    // Recursion - a function calling itself
+function printNumberRecursively(n, current = 1) {   // (n): the max number to print
+                                                    // (current): which number being printed (default to 1)
+    if(current > n) {                               // will stop (no more calls)
+        return;
+    }
+    console.log(current);                           // (current) number being printed
+    printNumberRecursively(n, current + 1);         // (current + 1) calls the same function
+}                                                   // for (let i=1; i<=n; i++) loop type replaced by Recursion
