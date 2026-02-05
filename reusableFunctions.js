@@ -117,4 +117,26 @@ const totalAge = mappedPeople.reduce((sum, person) => {
         final (totalAge) is the sum of ages
 ---------------------------------------------------------------------------------------- */
 
+// 5. Then use the result to calculate the average age
+const averageAgeMapped = mappedPeople.length > 0    // Avoid dividing by zero if array is empty
+    ? totalAge / mappedPeople.length
+    : 0;
 
+
+/* =============================================================================================================================================
+    PART 3: THINKING CRITICALLY 
+============================================================================================================================================= */
+// 1. Take an object and increment its age field.
+function incrementAgeField(obj) {
+    if (typeof obj.age === "undefined") {   // Assess if (obj.age) exist or not
+        obj.age = 0;                        // If (obj.age) doesn't exist, sets it to 0
+    } else {
+        obj.age = Number(obj.age);          // If (obj.age) does exist, will ensure it is a number
+    }
+    obj.age += 1;                           // Increments age by 1
+}
+
+// 2. Take an object, make a copy, and increment the age field of the copy. 
+function incrementAge
+
+// 3. Return the copy
