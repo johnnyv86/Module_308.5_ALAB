@@ -2,12 +2,12 @@
     THINKING FUNCTIONALLY
 ---------------------------- */
 // 1. Take an array of numbers and return the sum.
-function sumArray(numbers) {        // (numbers is an array [1, 2, 3, 4, 5])
-    let sum = 0                     // starts sum at 0
-    for (const n of numbers) {      // (for . . . of) iterate through each number
-        sum += n;                   // Add each number to sum
+function sumArray(numbers) {                    // (numbers is an array [1, 2, 3, 4, 5])
+    let sum = 0                                 // starts sum at 0
+    for (const n of numbers) {                  // (for . . . of) iterate through each number
+        sum += n;                               // Add each number to sum
     }
-    return sum;                     // Returns the final sum
+    return sum;                                 // Returns the final sum
 }
 
 
@@ -18,7 +18,17 @@ function averageArray(numbers) {
 }
 
 // 3. Take an array of strings and return the longest string.
+function longestString(strings) {
+    if (strings.length === 0) return "";        // If string is empty, will return an empty string
 
+    let longest = strings[0];                   // Assums first string is the longest
+    for (const str of strings) {                // (for . . . of) iterate through each number
+        if (str.length > longest.length) {      // If `str.length` is greater, update `longest`
+            longest = str;
+        }
+    }
+    return longest; //                          // Return the longest string
+}
 
 // 4. Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
 
